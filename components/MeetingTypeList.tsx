@@ -101,6 +101,29 @@ const MeetingTypeList = () => {
         handleClick={() => router.push("/recordings")}
       />
 
+      {!callDetails ? (
+        <MeetingModal
+          isOpen={meetingState === "isScheduleMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Create Meeting"
+          handleClick={createMeeting}
+        >
+          
+        </MeetingModal>
+      ) : (
+        <MeetingModal
+          isOpen={meetingState === "isScheduleMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Meeting Created"
+          className="text-center"
+          handleClick={()=>{
+            // navigator.clipboard.writeText(meetingLink)
+            // toast({title:'Link Copied'})
+          }}
+          image="/icons/checked.svg"
+          
+        />
+      )}
       <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}

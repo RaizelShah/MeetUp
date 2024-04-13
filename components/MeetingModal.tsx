@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent } from "./ui/dialog";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -33,9 +33,7 @@ const MeetingModal = ({
   buttonIcon,
 }: MeetingModalProps) => {
   return (
-    // open={isOpen} onOpenChange={onClose}
-    <Dialog>
-      <DialogTrigger>Open</DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
         <div className="flex flex-col gap-6">
           {image && (

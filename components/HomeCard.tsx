@@ -24,7 +24,7 @@ const HomeCard = ({
         className
       )}
       onClick={() => {
-        handleClick;
+        handleClick();
       }}
     >
       <div className="flex-center glassmorphism size-12 rounded-[10px]">
